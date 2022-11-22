@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->decimal('rating', 2, 2)->default(0);
+            $table->string('name')->unique();
+            $table->decimal('google_rating')->default(0);
+            $table->string('address')->nullable();
+            $table->string('phoneNo')->nullable();
+            $table->string('email')->nullable();
             $table->integer('number')->default(0);
-            $table->double('lat');
-            $table->double('lon');
+            $table->double('lat')->default(0);
+            $table->double('lon')->default(0);
             $table->string('website')->nullable();
+            $table->string('men_id')->nullable();
             $table->timestamps();
         });
     }

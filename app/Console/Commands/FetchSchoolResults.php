@@ -1,0 +1,97 @@
+<?php
+
+namespace App\Console\Commands;
+
+
+use Illuminate\Console\Command;
+use App\Models\School;
+use App\Models\SchoolResult;
+
+class RawSchoolResult {
+    private $year;
+    private $candidates;
+    private $avgSum;
+    private $plus9;
+    private $menId;
+
+    public function __construct($year, $menId)
+    {
+        $this->year = $year;
+        $this->menId = $menId;
+        $this->plus9 = 0;
+    }
+
+    function addNewResult($result) {
+        $this->candidates++;
+        $this->avgSum += $result->mev;
+        if ($result->mev >= 9.00) {
+            $this->plus9++;
+        } 
+    }
+
+    function serializeIntoResult() {
+        $school = School::where('men_id', $this->menId)->first();
+        if ($school == null) {
+            throw new \Exception("Invalid school, please repull schools");
+        }
+
+        return [
+            'year' => $this->year,
+            'schools_id' => $school->id,
+            'students' => $this->candidates,
+            'avg' => $this->avgSum / $this->candidates,
+            'over_nine' => $this->plus9,
+            'percent_over_nine' => ($this->plus9 == 0) ? 0 : ($this->plus9 / $this->candidates) * 100,
+        ];
+    }
+}
+
+class FetchSchoolResults extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'school:results {year}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Get all school results on a certain year';
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    const RESULTS_URL = "http://evaluare.edu.ro/%s/rezultate/B/data/candidate.json?_=%s";
+
+    public function handle()
+    {
+
+        $request = sprintf(self::RESULTS_URL, $this->argument('year'), time());
+        try {
+            $data = json_decode(file_get_contents($request));
+            $results = [];
+            foreach ($data as $result) {
+                if (!isset($results[$result->schoolCode])) {
+                    $results[$result->schoolCode] = new RawSchoolResult((int) $this->argument('year'), $result->schoolCode);
+                }
+                $results[$result->schoolCode]->addNewResult($result);
+            }
+        } catch (\Exception $e)
+        {
+            $this->error("Failed to get data for selected year!");
+            return Command::ERROR;
+        }
+
+        foreach($results as $result) {
+            SchoolResult::create($result->serializeIntoResult());
+        }
+
+        return Command::SUCCESS;
+    }
+}
