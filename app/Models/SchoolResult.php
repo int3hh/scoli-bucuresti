@@ -10,4 +10,8 @@ class SchoolResult extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function school() {
+        return $this->belongsTo('App\Models\School');
+    }
 }

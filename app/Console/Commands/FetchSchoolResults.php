@@ -23,10 +23,12 @@ class RawSchoolResult {
 
     function addNewResult($result) {
         $this->candidates++;
-        $this->avgSum += $result->mev;
-        if ($result->mev >= 9.00) {
-            $this->plus9++;
-        } 
+        if (is_numeric($result->mev)) {
+            $this->avgSum += $result->mev;
+            if ($result->mev >= 9.00) {
+                $this->plus9++;
+            } 
+        }
     }
 
     function serializeIntoResult() {
@@ -37,9 +39,9 @@ class RawSchoolResult {
 
         return [
             'year' => $this->year,
-            'schools_id' => $school->id,
+            'school_id' => $school->id,
             'students' => $this->candidates,
-            'avg' => $this->avgSum / $this->candidates,
+            'avg' => ($this->avgSum > 0) ?  $this->avgSum / $this->candidates : 0,
             'over_nine' => $this->plus9,
             'percent_over_nine' => ($this->plus9 == 0) ? 0 : ($this->plus9 / $this->candidates) * 100,
         ];

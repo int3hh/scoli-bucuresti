@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('school_results', function (Blueprint $table) {
             $table->id();
             $table->integer('year');
-            $table->foreignId('schools_id');
+            $table->foreignId('school_id');
             $table->integer('students');
             $table->decimal('avg', 4, 2);
             $table->integer('over_nine');
