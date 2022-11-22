@@ -85,7 +85,7 @@ class FetchSchoolResults extends Command
         } catch (\Exception $e)
         {
             $this->error("Failed to get data for selected year!");
-            return Command::ERROR;
+            return Command::FAILURE;
         }
 
         foreach($results as $result) {
