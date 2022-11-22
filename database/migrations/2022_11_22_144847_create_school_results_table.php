@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('avg', 4, 2);
             $table->integer('over_nine');
             $table->decimal('percent_over_nine', 4, 2);
+            $table->integer('missing');
             $table->timestamps();
         });
     }

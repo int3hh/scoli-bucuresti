@@ -19,6 +19,7 @@ class SchoolResultTable extends DataTableComponent
         $this->setColumnSelectDisabled();
         $this->setDefaultSort('avg', 'desc');
         $this->setSearchStatus(true);
+        $this->setSearchDebounce(1000);
     }
 
     public function builder() : Builder {
@@ -33,6 +34,7 @@ class SchoolResultTable extends DataTableComponent
            Column::make('Candidati', 'students')->sortable()->collapseOnTablet(),
            Column::make('Medii peste 9', 'over_nine')->sortable()->collapseOnTablet(),
            Column::make('Medii peste 9 (%)', 'percent_over_nine')->sortable()->collapseOnTablet(),
+           Column::make('Absenti', 'missing')->sortable()->collapseOnTablet(),
         ];
     }
 }

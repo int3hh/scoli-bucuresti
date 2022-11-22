@@ -10,6 +10,7 @@ use App\Models\SchoolResult;
 class RawSchoolResult {
     private $year;
     private $candidates;
+    private $missing;
     private $avgSum;
     private $plus9;
     private $menId;
@@ -19,15 +20,19 @@ class RawSchoolResult {
         $this->year = $year;
         $this->menId = $menId;
         $this->plus9 = 0;
+        $this->missing = 0;
+        $this->candidates = 0;
     }
 
     function addNewResult($result) {
-        $this->candidates++;
-        if (is_numeric($result->mev)) {
+        if ($result->mev > 0) {
+            $this->candidates++;
             $this->avgSum += $result->mev;
             if ($result->mev >= 9.00) {
                 $this->plus9++;
             } 
+        } else {
+            $this->missing++;
         }
     }
 
@@ -44,6 +49,7 @@ class RawSchoolResult {
             'avg' => ($this->avgSum > 0) ?  $this->avgSum / $this->candidates : 0,
             'over_nine' => $this->plus9,
             'percent_over_nine' => ($this->plus9 == 0) ? 0 : ($this->plus9 / $this->candidates) * 100,
+            'missing' => $this->missing,
         ];
     }
 }
