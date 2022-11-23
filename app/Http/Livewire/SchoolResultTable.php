@@ -74,14 +74,24 @@ class SchoolResultTable extends DataTableComponent
         return [
            Column::make('Scoala', 'school.name')->sortable()->searchable(),
            Column::make('Media', 'avg')->sortable()->collapseOnMobile(),
+           Column::make('Var %', 'var')->sortable()->format(function ($value, $row, $column) {
+             if ($value == 0.00) return '-';
+             if ($value < 0) {
+                $floc = $value * -1;
+                return "<p class='text-red-600'><i class='fa-solid fa-arrow-down'></i> {$floc} </p>";
+             } else {
+                return "<p class='text-green-600'><i class='fa-solid fa-arrow-up'></i> {$value} </p>";
+             }
+           })->html()->collapseOnTablet(),
            Column::make('Candidati', 'students')->sortable()->collapseOnTablet(),
            Column::make('Medii peste 9', 'over_nine')->sortable()->collapseOnTablet(),
            Column::make('Medii peste 9 (%)', 'percent_over_nine')->sortable()->collapseOnTablet(),
            Column::make('Absenti', 'missing')->sortable()->collapseOnTablet(),
            Column::make('lat', 'school.lat')->hideIf(true),
            Column::make('lon', 'school.lon')->hideIf(true),
-           Column::make('Detalii', 'created_at')->format(fn($value, $row, Column $column) => "<a href='https://www.google.com/maps?saddr=My+Location&daddr=@{$row->{'school.lat'}},{$row->{'school.lon'}}' class='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded' target='_blank'> <i class='fa-regular fa-map'></i> </a>")->html()
-                               ->collapseOnTablet(),
+           Column::make('school_id', 'school_id')->hideIf(true),
+     /*      Column::make('Detalii', 'created_at')->format(fn($value, $row, Column $column) => "<a href='https://www.google.com/maps?saddr=My+Location&daddr=@{$row->{'school.lat'}},{$row->{'school.lon'}}' class='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded' target='_blank'> <i class='fa-regular fa-map'></i> </a>")->html()
+                               ->collapseOnTablet(), */
         ];
     }
 }

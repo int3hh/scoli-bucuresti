@@ -12,8 +12,8 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
-    public function lista() {
-        return view('lista');
+    public function rezultate() {
+        return view('rezultate');
     }
 
     public function despre() {
@@ -21,7 +21,6 @@ class HomeController extends Controller
     }
 
     public function test() {
-        $rez = SchoolResult::where('id', 1)->first();
-        dd($rez->school->name);
-    }
+        dd(round(0, 2));
+   }
 }

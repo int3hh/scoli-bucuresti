@@ -16,13 +16,4 @@ class SchoolResult extends Model
         return $this->belongsTo(School::class);
     }
 
-    public function fluctuation() {
-        $lastYear = SchoolResult::where('year', config('utils')['currentYear'] - 1)->first();
-        if ($lastYear) {
-            $diff = (($this->avg - $lastYear->avg) / $lastYear->avg) * 100;
-            return $diff;
-        }
-
-        return 0;
-    }
 }

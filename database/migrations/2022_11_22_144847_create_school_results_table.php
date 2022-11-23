@@ -20,8 +20,9 @@ return new class extends Migration
             $table->integer('students');
             $table->decimal('avg', 4, 2);
             $table->integer('over_nine');
-            $table->decimal('percent_over_nine', 4, 2);
+            $table->decimal('percent_over_nine', 5, 2);
             $table->integer('missing');
+            $table->decimal('var', 5, 2)->default(0);
             $table->timestamps();
         });
     }
