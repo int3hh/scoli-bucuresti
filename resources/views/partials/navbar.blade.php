@@ -24,6 +24,8 @@
 
             <a href="/lista" class="{{ Route::is('lista') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Listă școli</a>
 
+            <a href="/rezultate" class="{{ Route::is('rezultate') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Rezultate școlare</a>
+           
             <a href="/despre" class="{{ Route::is('despre') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Despre proiect</a>
 
           </div>
@@ -54,8 +56,11 @@
 
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <a href="/" class="{{ Route::is('index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Hartă școli</a>
-
+      
       <a href="/lista" class="{{ Route::is('lista') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">Listă școli</a>
+
+      <a href="/rezultate" class="{{ Route::is('rezultate') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">Rezultate școlare</a>
+
 
       <a href="/despre" class="{{ Route::is('despre') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">Despre proiect</a>
 
