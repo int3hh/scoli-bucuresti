@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
 .spinner {
     margin: 100px auto;
     width: 50px;

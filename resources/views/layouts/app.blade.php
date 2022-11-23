@@ -25,6 +25,8 @@
         <meta name="twitter:description" content="">
         <meta name="twitter:title" content="">
         
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])

@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\DespreComponent;
+use App\Http\Livewire\HartaComponent;
+use App\Http\Livewire\ListaComponent;
+use App\Http\Livewire\RezultateComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('rezultate', [HomeController::class, 'rezultate'])->name('rezultate');
-Route::get('despre',[HomeController::class, 'despre'])->name('despre');
-Route::get('test', [HomeController::class, 'test']);
+Route::get('/', HartaComponent::class)->name('index');
+Route::get('rezultate', RezultateComponent::class)->name('rezultate');
+Route::get('lista', ListaComponent::class)->name('lista');
+Route::get('despre', DespreComponent::class)->name('despre');
