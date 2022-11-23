@@ -7,6 +7,8 @@
 
         <title>Scoli Bucuresti</title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+       
         <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon96.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png">
@@ -22,10 +24,7 @@
         <meta name="twitter:card" content="https://cryptoatm.ro/img/cover-min.png">
         <meta name="twitter:description" content="">
         <meta name="twitter:title" content="">
-
-        <style>
-                [x-cloak] { display: none !important; }
-        </style>
+        
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])

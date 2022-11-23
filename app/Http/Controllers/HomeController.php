@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\School;
+use App\Models\SchoolResult;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,5 +18,10 @@ class HomeController extends Controller
 
     public function despre() {
         return view('dashboard');
+    }
+
+    public function test() {
+        $rez = SchoolResult::where('id', 1)->first();
+        dd($rez->school->name);
     }
 }
