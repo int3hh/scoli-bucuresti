@@ -1,11 +1,17 @@
 <div class="container-fluid p-4">
     <div class="flex flex-col lg:flex-row">
         <div id="map" class="lg:w-1/2 w-full h-96 relative map">
-            
+        <div id="spinner" class="spinner" style="align-self: center; color: #1F2937">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
         </div>
-
-        <div class="lg:block lg:w-1/2 lg:ml-8 mt-20 lg:mt-0">
-            mea
+        </div>
+        <div class="lg:block lg:w-1/2 lg:ml-8 mt-3 lg:mt-0">
+            <span > <i style="color: #f6c345" class="fa-solid fa-location-pin"></i> Scoli private &nbsp; <i style="color: #00b23d" class="fa-solid fa-location-pin"></i> Scoli de stat </span>
+            <livewire:detalii-component />
         </div>
     </div>  
     
@@ -28,6 +34,8 @@
     let markers = [];
 
     map.on('load', () => {
+        const loader = document.getElementById('spinner');
+        loader.style.display = 'none';
         schools.forEach((item) => {
             const col = item.privat ? '#f6c345' : '#00b23d';
             const marker = new mapboxgl.Marker({
@@ -36,7 +44,7 @@
             .addTo(map);
             markers.push(marker)
             marker.getElement().addEventListener('click', () => {
-                alert("Clicked " + item.id);
+                Livewire.emit('updateSchool', item.id);
             });
         });
     });

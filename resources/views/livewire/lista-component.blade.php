@@ -1,3 +1,3 @@
-<div>
-    {{-- Success is as dangerous as failure. --}}
+<div class="container-fluid p-4">
+    <livewire:schools-table class="mt-1"/>
 </div>
