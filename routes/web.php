@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HartaComponent::class)->name('index');
+Route::get('/harta', HartaComponent::class)->name('harta');
 Route::get('rezultate', RezultateComponent::class)->name('rezultate');
-Route::get('lista', ListaComponent::class)->name('lista');
+Route::get('/', ListaComponent::class)->name('index');
 Route::get('despre', DespreComponent::class)->name('despre');

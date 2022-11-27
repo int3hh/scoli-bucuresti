@@ -69,6 +69,7 @@ class SchoolsTable extends DataTableComponent
     {
         return [
             Column::make('Nume', 'name')->sortable()->searchable(),
+            Column::make('lon', 'lon')->hideIf(true),
             Column::make('Rating','total_rating')->sortable()->format(function($value) {
                 $stars = '';
                 if ($value != null) {
@@ -94,7 +95,7 @@ class SchoolsTable extends DataTableComponent
                 }
             })->collapseOnTablet(),
             Column::make('Maps / Website', 'lat')->format(function($value, $row, Column $column) {
-              $result = "<a href='https://www.google.com/maps?saddr=My+Location&daddr=@{$row->{'lat'}},{$row->{'lon'}}' class='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded' target='_blank'> <i class='fa-regular fa-map'></i> </a>";
+              $result = "<a href='https://www.google.com/maps?saddr=My+Location&daddr=@{$row->lat},{$row->lon}' class='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded' target='_blank'> <i class='fa-regular fa-map'></i> </a>";
               if ($row->website != null) {
                 $result .= "<a href='{{ $row->website }}' class='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded' target='_blank'> <i class='fa-regular fa-globe'></i> </a>";
               }
