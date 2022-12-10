@@ -72,7 +72,7 @@ class SchoolResultTable extends DataTableComponent
     public function columns(): array
     {
         return [
-           Column::make('Scoala', 'school.name')->sortable()->searchable(),
+           Column::make('Școala', 'school.name')->sortable()->searchable(),
            Column::make('Media', 'avg')->sortable()->collapseOnMobile(),
            Column::make('Var %', 'var')->sortable()->format(function ($value, $row, $column) {
              if ($value == 0.00) return '-';
@@ -83,10 +83,10 @@ class SchoolResultTable extends DataTableComponent
                 return "<p class='text-green-600'><i class='fa-solid fa-arrow-up'></i> {$value} </p>";
              }
            })->html()->collapseOnTablet(),
-           Column::make('Candidati', 'students')->sortable()->collapseOnTablet(),
+           Column::make('Candidați', 'students')->sortable()->collapseOnTablet(),
            Column::make('Medii peste 9', 'over_nine')->sortable()->collapseOnTablet(),
            Column::make('Medii peste 9 (%)', 'percent_over_nine')->sortable()->collapseOnTablet(),
-           Column::make('Absenti', 'missing')->sortable()->collapseOnTablet(),
+           Column::make('Absenți', 'missing')->sortable()->collapseOnTablet(),
            Column::make('lat', 'school.lat')->hideIf(true),
            Column::make('lon', 'school.lon')->hideIf(true),
            Column::make('school_id', 'school_id')->hideIf(true),

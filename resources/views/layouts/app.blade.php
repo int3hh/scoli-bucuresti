@@ -33,12 +33,13 @@
 
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-gray-100">
+        @include('partials.navbar')
             <!-- Page Content -->
-            @include('partials.navbar')
-            <main>
+            <main class="pt-24 py-4 z-5 relative">
                 {{ $slot }}
             </main>
-            @livewireScripts
+            
+        @livewireScripts
     </body>
 </html>
