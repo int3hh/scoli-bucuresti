@@ -169,3 +169,49 @@ thead tr:first-child {
 .fill-secondary {
   fill: theme('colors.secondary');
 }
+
+@screen lg {
+  td.text-sm {
+    font-size: 1rem;
+  }
+
+  th.text-xs,
+  th button.text-xs {
+    font-size: 1.1rem;
+  }
+
+  .lista-table th.text-xs:nth-child(4),
+  .lista-table th.text-xs:nth-child(4) button,
+  .lista-table th.text-xs:nth-child(5),
+  .lista-table th.text-xs:nth-child(5) button {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  .lista-table th.text-xs:last-child {
+    text-align: right;
+  }
+
+  .lista-table td.text-sm:nth-child(4),
+  .lista-table td.text-sm:nth-child(4) button,
+  .lista-table td.text-sm:nth-child(5),
+  .lista-table td.text-sm:nth-child(5) button  {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+
+  .lista-table td.text-sm:last-child a {
+    display: flex;
+    justify-content: end;
+  }
+
+  /* */
+  .rezultate-table th.text-xs:nth-child(4),
+  .rezultate-table th.text-xs:nth-child(4) button {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
