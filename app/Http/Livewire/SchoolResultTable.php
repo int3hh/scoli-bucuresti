@@ -57,11 +57,11 @@ class SchoolResultTable extends DataTableComponent
             SelectFilter::make('Nivel')
             ->options([
                 '' => 'Toate',
-                '0' => 'Primar',
-                '1' => 'Gimnazial',
-                '2' => 'Liceal',
+                '2' => 'Gimnazial',
+                '3' => 'Liceal',
             ])->filter(function (Builder $builder, string $value) {
                 if ($value != '') {
+                    dd($builder->toSql());
                     $builder->where('schools.nivel', $value);
                 }
             }),

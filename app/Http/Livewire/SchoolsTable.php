@@ -54,9 +54,9 @@ class SchoolsTable extends DataTableComponent
             SelectFilter::make('Nivel studii')
             ->options([
                 '' => 'Toate',
-                '0' => 'Primar',
-                '1' => 'Gimnazial',
-                '2' => 'Liceal',
+                '1' => 'Primar',
+                '2' => 'Gimnazial',
+                '3' => 'Liceal',
             ])->filter(function (Builder $builder, string $value) {
                 if ($value != '') {
                     $builder->where('nivel', $value);

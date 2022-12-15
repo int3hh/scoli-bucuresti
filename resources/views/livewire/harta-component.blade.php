@@ -2,7 +2,7 @@
     <div class="container rounded-2xl overflow-hidden">
         <div class="flex flex-col lg:flex-row h-custom">
             <div id="map" class="w-full relative map rounded-custom h-full">
-            <div id="spinner" class="spinner" style="align-self: center; color: #1F2937">
+            <div id="spinner" class="spinner" style="align-self: center;">
                 <div class="rect1"></div>
                 <div class="rect2"></div>
                 <div class="rect3"></div>
@@ -13,7 +13,7 @@
         <div class="absolute bg-white rounded-tl-lg rounded-br-lg px-4 py-2">
             <span> <i style="color: #f6c345" class="fa-solid fa-location-pin"></i> Scoli private &nbsp; <i style="color: #00b23d" class="fa-solid fa-location-pin"></i> Scoli de stat </span>
         </div>
-        <div class="lg:w-1/2 absolute lg:ml-4 mt-auto mr-4 bottom-4 lg:bottom-8 bg-white p-4 rounded-2xl">
+        <div id="card" class="lg:w-1/2 absolute lg:ml-4 mt-auto mr-4 bottom-4 lg:bottom-8 bg-white p-4 rounded-2xl" style="display:none;">
             <livewire:detalii-component />
         </div>
     </div>  
@@ -26,10 +26,10 @@
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiY3J5cHRvY3ViZTIiLCJhIjoiY2xhdTE0MXkyMDF5YjN3cjY1bm81Mmw5ZSJ9.jfTasCmjT7jXXX6R8VZaVA';
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [ 26.094561, 44.43771811], // starting position [lng, lat]
-        zoom: 10, // starting zoom
+        container: 'map', 
+        style: 'mapbox://styles/mapbox/streets-v12', 
+        center: [ 26.094561, 44.43771811], 
+        zoom: 10,
         zoomControl: true,
     });
 
@@ -48,6 +48,7 @@
             .addTo(map);
             markers.push(marker)
             marker.getElement().addEventListener('click', () => {
+                document.getElementById('card').style.display = 'block';
                 Livewire.emit('updateSchool', item.id);
             });
         });
