@@ -1,11 +1,6 @@
 <div class="bg-gray-100  mx-4 lg:mx-0">
     <div class="bg-white">
-        <section class="text-gray-600 body-font ">
-            <div class="flex px-4 md:flex-row flex-col items-center lg:items-center">
-              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
-              </div>
-              <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <section class="text-gray-600 body-font p-4">
                 <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Despre proiect
                 </h1>
                 <p class="mb-8 leading-relaxed">
@@ -34,8 +29,6 @@
                  Am început acest proiect în primul rând pentru noi, aflați în plin proces de căutare a unei școli potrivite pentru fetița noastră. Discutând cu alți părinți am înțeles că există interes pentru aceste informații și am încercat să luăm în calcul toate caracterisiticile importante în căutarea unei școli. Sperăm să va fie de folos.
                 </p>
               
-              </div>
-            </div>
         </section>
     </div>
 </div>

@@ -13,7 +13,7 @@ class FetchSchoolDetails extends Command
      *
      * @var string
      */
-    protected $signature = 'school:details';
+    protected $signature = 'school:details {judet}';
 
     /**
      * The console command description.
@@ -29,7 +29,7 @@ class FetchSchoolDetails extends Command
      */
     public function handle()
     {
-        $scraper = new MenScraper();
+        $scraper = new MenScraper($this->argument('judet'));
         $pairs = [];
         while (($data = $scraper->get()) !== false) {
             foreach ($data as $school) {

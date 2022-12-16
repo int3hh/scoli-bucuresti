@@ -81,12 +81,9 @@ table {
   position: relative;
 }
 
-thead.bg-gray-50 {
-  @apply bg-transparent text-primary;
-}
 
 thead .text-gray-500 {
-  @apply text-primary font-bold;
+  @apply text-primary;
 }
 
 tbody.divide-y {
@@ -97,30 +94,13 @@ thead {
   position: sticky;
   background: white;
   z-index: 10;
-  top: 96px;
-}
-
-thead tr {
-  background: white;
-}
-
-thead th {
-  padding: 2rem !important; 
-}
-
-td.whitespace-nowrap {
-  white-space: inherit !important;
 }
 
 td .mb-2 {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-
-  
+  align-items: center;  
 }
-
-
 
 /* thead th:first-child,
 thead tr:first-child {
@@ -171,10 +151,7 @@ thead tr:first-child {
 }
 
 @screen lg {
-  td.text-sm {
-    font-size: 1rem;
-  }
-
+ 
   th.text-xs,
   th button.text-xs {
     font-size: 1.1rem;
@@ -205,13 +182,21 @@ thead tr:first-child {
 
   .lista-table td.text-sm:last-child a {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   /* */
-  .rezultate-table th.text-xs:nth-child(4),
-  .rezultate-table th.text-xs:nth-child(4) button {
+  
+  .rezultate-table td {
     text-align: center;
-    margin: 0 auto;
   }
+
+
+  .rezultate-table td:nth-child(2) {
+      text-align: left;
+  }
+
+
+
+ 
 }

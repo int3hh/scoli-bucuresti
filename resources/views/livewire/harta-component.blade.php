@@ -36,11 +36,12 @@
     map.addControl(new mapboxgl.NavigationControl());
 
     let markers = [];
+    let prevSelected = undefined;
 
     map.on('load', () => {
         const loader = document.getElementById('spinner');
         loader.style.display = 'none';
-        schools.forEach((item) => {
+        schools.forEach((item, idx) => {
             const col = item.privat ? '#f6c345' : '#00b23d';
             const marker = new mapboxgl.Marker({
                 color: col,
@@ -48,6 +49,13 @@
             .addTo(map);
             markers.push(marker)
             marker.getElement().addEventListener('click', () => {
+                const el = markers[idx].getElement();
+                el.querySelectorAll('path')[0].setAttribute('fill', '#880808');
+                if (prevSelected != undefined) {
+                    const old = markers[prevSelected].getElement();
+                    old.querySelectorAll('path')[0].setAttribute('fill', schools[prevSelected].privat ? '#f6c345' : '#00b23d');
+                }
+                prevSelected = idx;
                 document.getElementById('card').style.display = 'block';
                 Livewire.emit('updateSchool', item.id);
             });

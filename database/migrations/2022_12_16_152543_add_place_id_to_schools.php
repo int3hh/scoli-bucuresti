@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('school', function (Blueprint $table) {
-            $table->string('certificare')->default('men');
+        Schema::table('schools', function (Blueprint $table) {
+            $table->string('place_id')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('school', function (Blueprint $table) {
-            $table->dropColumn('men');
+        Schema::table('schools', function (Blueprint $table) {
+            $table->dropColumn('place_id');
         });
     }
 };

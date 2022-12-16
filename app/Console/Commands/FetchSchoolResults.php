@@ -14,10 +14,12 @@ class RawSchoolResult {
     private $avgSum;
     private $plus9;
     private $menId;
+    private $name;
 
-    public function __construct($year, $menId)
+    public function __construct($year, $menId, $name)
     {
         $this->year = $year;
+        $this->name = $name;
         $this->menId = $menId;
         $this->plus9 = 0;
         $this->missing = 0;
@@ -38,8 +40,15 @@ class RawSchoolResult {
 
     function serializeIntoResult($year) {
         $school = School::where('men_id', $this->menId)->first();
+
         if ($school == null) {
-            throw new \Exception("Invalid school, please repull schools");
+            $school = School::create([
+                'name' => $this->name,
+                'men_id' => $this->menId,
+                'sector' => 0,
+                'total_rating' => 0,
+            ]);
+            echo "Inserted school: " . $this->name . PHP_EOL;
         }
 
         $var = 0;
@@ -70,7 +79,7 @@ class FetchSchoolResults extends Command
      *
      * @var string
      */
-    protected $signature = 'school:results {year}';
+    protected $signature = 'school:results {year} {judet}';
 
     /**
      * The console command description.
@@ -84,18 +93,18 @@ class FetchSchoolResults extends Command
      *
      * @return int
      */
-    const RESULTS_URL = "http://evaluare.edu.ro/%s/rezultate/B/data/candidate.json?_=%s";
+    const RESULTS_URL = "http://evaluare.edu.ro/%s/rezultate/%s/data/candidate.json?_=%s";
 
     public function handle()
     {
 
-        $request = sprintf(self::RESULTS_URL, $this->argument('year'), time());
+        $request = sprintf(self::RESULTS_URL, $this->argument('year'), strtoupper($this->argument('judet')), time());
         try {
             $data = json_decode(file_get_contents($request));
             $results = [];
             foreach ($data as $result) {
                 if (!isset($results[$result->schoolCode])) {
-                    $results[$result->schoolCode] = new RawSchoolResult((int) $this->argument('year'), $result->schoolCode);
+                    $results[$result->schoolCode] = new RawSchoolResult((int) $this->argument('year'), $result->schoolCode, $result->school);
                 }
                 $results[$result->schoolCode]->addNewResult($result);
             }

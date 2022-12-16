@@ -30,7 +30,7 @@ class SchoolResultTable extends DataTableComponent
 
     public function filters() : array {
         return [
-            SelectFilter::make('Sector')
+            SelectFilter::make('Zona')
             ->options([
                 '' => 'Toate',
                 '1' => 'Sector 1',
@@ -38,7 +38,8 @@ class SchoolResultTable extends DataTableComponent
                 '3' => 'Sector 3',
                 '4' => 'Sector 4',
                 '5' => 'Sector 5',
-                '6' => 'Sector 6'
+                '6' => 'Sector 6',
+                '0' => 'Ilfov',
             ])->filter(function (Builder $builder, string $value) {
                 if ($value != '') {
                     $builder->where('schools.sector', $value);
