@@ -29,7 +29,7 @@
         container: 'map', 
         style: 'mapbox://styles/mapbox/streets-v12', 
         center: [ 26.094561, 44.43771811], 
-        zoom: 10,
+        zoom: 9,
         zoomControl: true,
     });
 

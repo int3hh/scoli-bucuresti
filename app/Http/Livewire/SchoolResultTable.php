@@ -62,7 +62,6 @@ class SchoolResultTable extends DataTableComponent
                 '3' => 'Liceal',
             ])->filter(function (Builder $builder, string $value) {
                 if ($value != '') {
-                    dd($builder->toSql());
                     $builder->where('schools.nivel', $value);
                 }
             }),
