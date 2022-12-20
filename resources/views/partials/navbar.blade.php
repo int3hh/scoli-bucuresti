@@ -41,6 +41,8 @@
            
             <a href="/despre" class="ef {{ Route::is('despre') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50">Despre proiect</a>
 
+            <a href="/feedback" class="ef {{ Route::is('feedback') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50">Feedback</a>
+
           </div>
         </div>
       </div>
@@ -62,6 +64,8 @@
 
 
       <a href="/despre" class="{{ Route::is('despre') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Despre proiect</a>
+
+      <a href="/feedback" class="{{ Route::is('feedback') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Feedback</a>
 
 
     </div>

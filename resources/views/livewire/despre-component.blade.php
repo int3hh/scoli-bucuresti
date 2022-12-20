@@ -4,18 +4,17 @@
                 <h1 class="title-font sm:text-4xl text-xl mb-4 font-medium text-gray-900">Dragi vizitatori,
                 </h1>
                 <p class="mb-8 leading-relaxed">
-                Acest proiect vine in întâmpinarea părinților in căutarea unei scoli potrivite pentru copilul lor. 
-                Am adunat aici informații despre toate școlile din orașul București si județul Ilfov, aducând in același loc școlile de stat si cele private. Părinții pot caută ușor in site școlile, in funcție de criteriile dorite: cum ar fi locația, rezultate academice, forma si nivelul de învățământ.  
-                <br>
+                Acest proiect vine în întâmpinarea părinților în căutarea unei școli potrivite pentru copilul lor. Am adunat aici informații despre toate școlile din orașul București și județul Ilfov, aducând în același loc școlile de stat și cele private. Părinții pot cauta ușor în site școlile, în funcție de criteriile dorite: cum ar fi locația, rezultate academice, formă și nivelul de învățământ.
+Am încercat să construim: o listă a tuturor școlilor cu informațiile de contact corespunzătoare, un clasament în funcție de rezultatele școlare și o hartă a orașului marcată cu locația fiecărei școli.  <br>
                 Am încercat să construim: o listă a tuturor școlilor cu informațiile de contact corespunzătoare, un clasament în funcție de rezultatele școlare și o hartă a orașului marcată cu locația fiecărei școli. 
          
                 </p>
                        
                 <p class="mb-8 leading-relaxed">
-                Clasamentul este realizat pe baza rezultatelor elevilor scolii la Evaluarea Naționala din anul 2022. Școlile sunt clasificate in funcție de media generala obținută de elevi, numărul de elevi participanți la evaluare, procentul mediilor peste 9 si variația procentuala a mediilor dintre anii 2022 si 2021. 
+                Clasamentul este realizat pe baza rezultatelor elevilor școlii la Evaluarea Naționala din anul 2022. Școlile sunt clasificate în funcție de media generală obținută de elevi, numărul de elevi participanți la evaluare, procentul mediilor peste 9 și variația procentuală a mediilor dintre anii 2022 și 2021. 
                 <br>
 
-                Harta orașului este marcată cu culori diferite în funcție de forma de învățământ a școlii, de stat sau privat. Fiecare marcaj va poate direcționa către informațiile de orientare din Google Maps. 
+                Harta este marcată diferit în funcție de sistemul de învățământ al școlii, de stat sau privat. Fiecare marcaj va poate direcționa către informațiile de orientare din Google Maps. 
                 </p>
 
                 <p class="mb-8 leading-relaxed mt-2">

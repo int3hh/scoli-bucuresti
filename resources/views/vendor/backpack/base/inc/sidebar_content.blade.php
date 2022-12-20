@@ -1,1 +1,2 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('school') }}"><i class="las la-graduation-cap"></i></i> Schools</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('messages') }}"><i class="nav-icon la la-envelope"></i> Messages</a></li>

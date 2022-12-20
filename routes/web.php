@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\DespreComponent;
+use App\Http\Livewire\FeedbackForm;
 use App\Http\Livewire\HartaComponent;
 use App\Http\Livewire\ListaComponent;
 use App\Http\Livewire\RezultateComponent;
@@ -23,3 +24,4 @@ Route::get('/harta', HartaComponent::class)->name('harta');
 Route::get('rezultate', RezultateComponent::class)->name('rezultate');
 Route::get('/', ListaComponent::class)->name('index');
 Route::get('despre', DespreComponent::class)->name('despre');
+Route::get('feedback', FeedbackForm::class)->name('feedback');
