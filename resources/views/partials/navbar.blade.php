@@ -30,7 +30,7 @@
       </div>
       <div class="flex flex-shrink-0 items-center">
         <a href="/">
-          <img class="block h-20 w-auto" src="/logo2.png" draggable="false" alt="logo">
+          <img class="block w-32 h-auto" src="/logo.svg" draggable="false" alt="logo">
         </a>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-center sm:justify-start">
