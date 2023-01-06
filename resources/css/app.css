@@ -200,7 +200,3 @@ thead tr:first-child {
 
  
 }
-
-td.whitespace-nowrap {
-  white-space: normal !important;
-}
