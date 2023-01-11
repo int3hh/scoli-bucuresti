@@ -196,7 +196,8 @@ thead tr:first-child {
       text-align: left;
   }
 
+  td.whitespace-nowrap {
+    white-space: normal !important;
+  }
 
-
- 
 }

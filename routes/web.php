@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/harta', HartaComponent::class)->name('harta');
-Route::get('rezultate', RezultateComponent::class)->name('rezultate');
-Route::get('/', ListaComponent::class)->name('index');
+Route::get('/', RezultateComponent::class)->name('rezultate');
+Route::get('lista', ListaComponent::class)->name('index');
 Route::get('despre', DespreComponent::class)->name('despre');
 Route::get('feedback', FeedbackForm::class)->name('feedback');

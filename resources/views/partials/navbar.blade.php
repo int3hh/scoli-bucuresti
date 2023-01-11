@@ -18,12 +18,13 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-         
-            <a href="/" class="ef {{ Route::is('index') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50">Listă școli</a>
+
+            <a href="/" class="ef {{ Route::is('rezultate') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50">Rezultate școlare</a>
+
+            <a href="/lista" class="ef {{ Route::is('index') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50">Listă școli</a>
 
             <a href="/harta" class="ef {{ Route::is('harta') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50" >Hartă școli</a>
 
-            <a href="/rezultate" class="ef {{ Route::is('rezultate') ? 'navbar-selected' : 'navbar-hovered' }} px-3 py-2 rounded-md text-base font-medium text-primary opacity-50">Rezultate școlare</a>
            
           </div>
         </div>
