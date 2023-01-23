@@ -54,15 +54,12 @@
   <div x-show="showMenu"  id="mobile-menu">
     <div class="space-y-1 px-2 pt-2 pb-3">
 
-      <a href="/" class="{{ Route::is('index') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Listă școli</a>
+      <a href="/" class="{{ Route::is('rezultate') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Rezultate școlare</a>
 
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <a href="/harta" class="{{ Route::is('harta') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Hartă școli</a>
       
-      
-
-      <a href="/rezultate" class="{{ Route::is('rezultate') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Rezultate școlare</a>
-
+      <a href="/lista" class="{{ Route::is('index') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Listă școli</a>
 
       <a href="/despre" class="{{ Route::is('despre') ? 'text-primary font-black opacity-100' : 'hover:text-primary hover:opacity-100' }} block px-3 py-2 rounded-md text-base font-medium">Despre proiect</a>
 
