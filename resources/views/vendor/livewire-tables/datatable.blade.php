@@ -10,10 +10,10 @@
             <x-livewire-tables::table.th.reorder />
             <x-livewire-tables::table.th.bulk-actions />
             <x-livewire-tables::table.th.row-contents />
-            <th scope="col" class="hidden md:table-cell px-6 py-3 text-left text-xs font-medium whitespace-nowrap text-gray-500 uppercase tracking-wider dark:bg-gray-800 dark:text-gray-400" wire:key="header-col-5-9eyktHlOl0cmgyJJpgEA">
-                    Loc
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium whitespace-nowrap text-gray-500 uppercase tracking-wider dark:bg-gray-800 dark:text-gray-400" wire:key="header-col-0-sktfsaPIbYCT9X0oz9Zp">
+            <span>Loc</span>
             </th>
-           
+
             @foreach($columns as $index => $column)
                 @continue($column->isHidden())
                 @continue($this->columnSelectIsEnabled() && ! $this->columnSelectIsEnabledForColumn($column))
