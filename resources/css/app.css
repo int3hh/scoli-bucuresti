@@ -185,6 +185,10 @@ thead tr:first-child {
     justify-content: flex-end;
   }
 
+  .lista-table td:nth-child(2) {
+    text-align: center;
+}
+
   /* */
   
   .rezultate-table td {
@@ -192,7 +196,7 @@ thead tr:first-child {
   }
 
 
-  .rezultate-table td:nth-child(2) {
+  .rezultate-table td:nth-child(3) {
       text-align: left;
   }
 
