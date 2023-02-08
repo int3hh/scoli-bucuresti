@@ -21,6 +21,8 @@ class SchoolsTable extends DataTableComponent
         $this->setColumnSelectDisabled();
         $this->setSearchStatus(true);
         $this->setSearchDebounce(1000);
+        $this->setDefaultSort('total_rating', 'desc');
+      
 
         // $this->setPerPageVisibilityStatus(false);
     }
