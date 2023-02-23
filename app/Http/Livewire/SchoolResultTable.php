@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\School;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\SchoolResult;
@@ -57,14 +58,15 @@ class SchoolResultTable extends DataTableComponent
             SelectFilter::make('Nivel')
             ->options([
                 '' => 'Toate',
-                '2' => 'Gimnazial',
-                '3' => 'Liceal',
+                '0' => 'Primar',
+                '1' => 'Gimnazial',
+                '2' => 'Liceal',
             ])->filter(function (Builder $builder, string $value) {
                 if ($value != '') {
-                    $builder->where('schools.nivel', $value);
+                    $nivel = School::Nivele[(int) $value];
+                    $builder->whereRaw("schools.nivel & $nivel = $nivel");
                 }
-            }),
-            
+            }),            
         ];
     }
 

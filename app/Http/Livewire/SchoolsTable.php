@@ -54,18 +54,18 @@ class SchoolsTable extends DataTableComponent
                     $builder->where('privat', $value);
                 }
             }),
-            SelectFilter::make('Nivel studii')
+            SelectFilter::make('Nivel')
             ->options([
                 '' => 'Toate',
-                '1' => 'Primar',
-                '2' => 'Gimnazial',
-                '3' => 'Liceal',
+                '0' => 'Primar',
+                '1' => 'Gimnazial',
+                '2' => 'Liceal',
             ])->filter(function (Builder $builder, string $value) {
                 if ($value != '') {
-                    $builder->where('nivel', $value);
+                    $nivel = School::Nivele[(int) $value];
+                    $builder->whereRaw("nivel & $nivel = $nivel");
                 }
-            }),
-            
+            }),            
         ];
     }
 

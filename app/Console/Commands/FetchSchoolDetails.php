@@ -37,31 +37,34 @@ class FetchSchoolDetails extends Command
             }
         }
 
-        $schools = School::where('email', null)->get();
+        $schools = School::all();
         foreach ($schools as $school) {
             try {
                 $this->info("Extracting details for {$school->name}");
                 $schoolId = $pairs[$school->men_id]; 
                 $details = json_decode(file_get_contents(sprintf("https://siiir.edu.ro/carto/app/rest/school/details/%s", $schoolId)));
-                $school->email = $details->email;
-                $school->phoneNo = $details->phoneNumber;
+               // $school->email = $details->email;
+               //  $school->phoneNo = $details->phoneNumber;
                 $schooling = json_decode(file_get_contents(sprintf("https://siiir.edu.ro/carto/app/rest/school/organisation/%s", $schoolId)));
                 $nivel = 0;
                 foreach ($schooling->schoolLevels as $key => $level) {
+                    $lvl = 0;
                     if (strpos($level->level, 'Primar') !== false) {
-                        if ($nivel == 0) {
-                            $nivel = 1;
-                        }
+                       $lvl = School::NIVEL_PRIMAR;
                     } else if (strpos($level->level, 'Gimnazi') !== false) {
-                        if ($nivel <= 1) {
-                            $nivel = 2;
-                        }
+                       $lvl = School::NIVEL_GIMNAZIAL;
                     } else if (strpos($level->level, 'Lice') !== false) {
-                        $nivel = 3;
+                       $lvl = School::NIVEL_LICEAL;
                     }
+
+                    if ($lvl && ( ($lvl & $nivel) != $lvl)) {
+                        $nivel |= $lvl;
+                    } 
+              
                 }    
+                $this->info("Nivel $nivel...\n");
                 $school->nivel = $nivel;
-                $school->privat = strpos($details->fundingForm, 'Tax') !== false;
+                // $school->privat = strpos($details->fundingForm, 'Tax') !== false;
                 $school->save();          
             } catch (\Exception $e) {
                 dd($e->getMessage());

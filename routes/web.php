@@ -7,6 +7,7 @@ use App\Http\Livewire\FeedbackForm;
 use App\Http\Livewire\HartaComponent;
 use App\Http\Livewire\ListaComponent;
 use App\Http\Livewire\RezultateComponent;
+use App\Models\School;
 use Illuminate\Support\Facades\Route;
 
 /*
