@@ -67,7 +67,7 @@ class FetchSchoolDetails extends Command
                 // $school->privat = strpos($details->fundingForm, 'Tax') !== false;
                 $school->save();          
             } catch (\Exception $e) {
-                dd($e->getMessage());
+                $this->error($e->getMessage());
                 continue;
             }
         }
