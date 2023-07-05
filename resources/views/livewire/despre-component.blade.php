@@ -11,14 +11,14 @@ Am încercat să construim: o listă a tuturor școlilor cu informațiile de con
                 </p>
                        
                 <p class="mb-8 leading-relaxed font-serif">
-                Clasamentul este realizat pe baza rezultatelor elevilor școlii la Evaluarea Naționala din anul 2022. Școlile sunt clasificate în funcție de media generală obținută de elevi, numărul de elevi participanți la evaluare, procentul mediilor peste 9 și variația procentuală a mediilor dintre anii 2022 și 2021. 
+                Clasamentul este realizat pe baza rezultatelor elevilor școlii la Evaluarea Naționala din anul 2023. Școlile sunt clasificate în funcție de media generală obținută de elevi, numărul de elevi participanți la evaluare, procentul mediilor peste 9 și variația procentuală a mediilor dintre anii 2023 și 2022. 
                 <br>
 
                 Harta este marcată diferit în funcție de sistemul de învățământ al școlii, de stat sau privat. Fiecare marcaj va poate direcționa către informațiile de orientare din Google Maps. 
                 </p>
 
                 <p class="mb-8 leading-relaxed mt-2 font-serif">
-                Fiecărei școli îi este atribuit un rating estimat de site-ul nostru, calculat în funcție de: rezultatele școlare, numărul de absenți de la Evaluarea Naționala, ratingul Google pentru școala respectivă și variația procentuală între 2022 și 2021. În cazul în care unei școli nu îi corespunde un rating, înseamnă că elevii acestei școli nu au participat la Evaluarea Naționala în anul 2021 și 2022. 
+                Fiecărei școli îi este atribuit un rating estimat de site-ul nostru, calculat în funcție de: rezultatele școlare, numărul de absenți de la Evaluarea Naționala, ratingul Google pentru școala respectivă și variația procentuală între 2023 și 2022. În cazul în care unei școli nu îi corespunde un rating, înseamnă că elevii acestei școli nu au participat la Evaluarea Naționala în anul 2022 și 2023. 
                 <br>
                 Sunt unele școli, care au doar clase de nivel primar, cum este cazul școlilor Montessori sau școli înființate recent, care încă nu au ajuns cu primele lor generații, la nivelul gimnazial, pentru Evaluarea Naționala. Astfel, rezultatele academice obținute la Evaluarea Naționala, nu reprezintă neapărat un criteriu determinant prin care o școala poate fi definită că fiind bună să mai puțin bună.
                 </p>

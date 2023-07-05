@@ -2,5 +2,5 @@
 
 return [
     'google-api-key' => env('GOOGLE_API_KEY'),
-    'currentYear' => 2022,
+    'currentYear' => 2023,
 ];
