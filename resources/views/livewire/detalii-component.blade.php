@@ -64,7 +64,7 @@
             </div>
             @if ($selectedSchool->hasResults())
             <div class="flex justify-between mt-4">
-                <a href="/rezultate?table[search]={{$selectedSchool->name}}" class="text-primary inline-flex items-center text-xs lg:text-sm">Rezultate evaluare
+                <a href="/?table[search]={{$selectedSchool->name}}" class="text-primary inline-flex items-center text-xs lg:text-sm">Rezultate evaluare
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>

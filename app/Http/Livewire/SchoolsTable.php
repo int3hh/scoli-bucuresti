@@ -88,15 +88,15 @@ class SchoolsTable extends DataTableComponent
             })->html(),
             Column::make('Sector', 'sector')->sortable()->collapseOnTablet(),
             Column::make('Nivel studii', 'nivel')->format(function ($value, $row, $column) {
-                switch ($value) {
-                    case 0 :
-                        return '-';
-                    case 1 :
-                        return 'Primar';
-                    case 2 :
-                        return 'Gimnazial';
-                    case 3 :
+                switch (true) {
+                    case ($value & School::NIVEL_LICEAL) :
                         return 'Liceal';
+                    case ($value & School::NIVEL_GIMNAZIAL) :
+                        return 'Gimnazial';
+                    case ($value & School::NIVEL_PRIMAR) :
+                        return 'Primar';
+                    default :
+                        return '-';
                 }
             })->collapseOnTablet(),
             Column::make('Maps', 'place_id')->format(function($value, $row, Column $column) {
